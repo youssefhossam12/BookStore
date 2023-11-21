@@ -10,6 +10,10 @@ namespace BookStore
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddRouting(options => options.LowercaseUrls = true);
+            //must be called before AddControllersWithViews
+            builder.Services.AddMemoryCache();
+            builder.Services.AddSession();
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<BookStoreContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("BookStoreContext")));
@@ -30,7 +34,17 @@ namespace BookStore
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
 
+            app.MapAreaControllerRoute(
+                name: "admin",
+                areaName: "Admin",
+                pattern: "Admin/{controller=Book}/{action=Index}/{id?}");
+            app.MapControllerRoute(
+                name: "page_sort",
+                pattern:
+                "{controller}/{action}/page/{pagenumber}/size/{pagesize}/sort/{sortfield}" +
+                "/{sortdirection}");
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");

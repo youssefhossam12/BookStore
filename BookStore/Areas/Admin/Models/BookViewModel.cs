@@ -13,6 +13,5 @@ namespace BookStore.Areas.Admin.Models
 
         public IEnumerable<Genre> Genres { get; set; } = new List<Genre>();
         public IEnumerable<Author> Authors { get; set; } = new List<Author>();
-
     }
 }

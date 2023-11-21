@@ -1,6 +1,6 @@
-﻿
-using BookStore.Models;
+﻿using BookStore.Models;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
 /* 
  * Note about validation: Admin area allows Author to be inserted, updated, and deleted. 
  * Check whether first name and last name are in database should only happen on insert,
@@ -15,12 +15,12 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
  * get EF duplicate primary key error. The Author insert won't throw errors, but still a 
  * good check to have, to help reduce bad data. 
  */
+
 namespace BookStore.Areas.Admin.Models
 {
+    // used by client-side and server-side remote validation checks
     public class Validate
     {
-        // used by client-side and server-side remote validation checks
-
         // private constants for working with TempData
         private const string GenreKey = "validGenre";
         private const string AuthorKey = "validAuthor";

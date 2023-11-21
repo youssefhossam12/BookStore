@@ -120,6 +120,5 @@ namespace BookStore.Areas.Admin.Controllers
             return RedirectToAction("Index");  // PRG pattern
         }
 
-
     }
 }

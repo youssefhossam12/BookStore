@@ -46,6 +46,5 @@ namespace BookStore.Areas.Admin.Controllers
                 return Json(validate.ErrorMessage);
             }
         }
-
     }
 }

@@ -7,7 +7,6 @@ namespace BookStore.Areas.Admin.Controllers
     [Area("Admin")]
     public class AuthorController : Controller
     {
-
         private Repository<Author> data { get; set; }
         public AuthorController(BookStoreContext ctx) => data = new Repository<Author>(ctx);
 
@@ -119,7 +118,6 @@ namespace BookStore.Areas.Admin.Controllers
             TempData["message"] = $"{author.FullName} removed from Authors.";
             return RedirectToAction("Index");
         }
-
 
     }
 }

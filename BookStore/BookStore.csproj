@@ -15,10 +15,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Views\Author\" />
-    <Folder Include="Areas\Admin\Views\Genre\" />
-    <Folder Include="Models\DomainModels\DTO\" />
-  </ItemGroup>
-
 </Project>
